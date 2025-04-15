@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Básica</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fefefe;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 80px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #cbdc14;
+            color: rgb(16, 15, 15);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora de Mystc</h1>
+
+    <input type="number" id="numero1" placeholder="Número 1">
+    <input type="number" id="numero2" placeholder="Número 2">
+    <br>
+    <button onclick="restar()">restar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function restar() {
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const suma = num1 - num2;
+
+            document.getElementById("resultado").innerText = "Resultado: " + suma;
+        }
+    </script>
+</body>
+</html>

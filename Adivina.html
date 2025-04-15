@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el Número</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #29de15;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        #mensaje {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>😈 Adivina coño </h1>
+    <p>Estoy pensando en un número entre 1 y 100. ¿Puedes adivinar cuál es?</p>
+
+    <input type="number" id="intento" placeholder="Tu número" min="1" max="100">
+    <button onclick="verificar()">¡Probar!</button>
+
+    <div id="mensaje"></div>
+
+    <script>
+        const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+
+        function verificar() {
+            const intento = parseInt(document.getElementById("intento").value);
+
+            if (intento === numeroSecreto) {
+                document.getElementById("mensaje").innerText = "🎉 ¡Correcto! ¡Adivinaste el número!";
+            } else if (intento > numeroSecreto) {
+                document.getElementById("mensaje").innerText = "📉 Muy alto. Intenta de nuevo.";
+            } else {
+                document.getElementById("mensaje").innerText = "📈 Muy bajo. Intenta de nuevo.";
+            }
+        }
+    </script>
+</body>
+</html>
